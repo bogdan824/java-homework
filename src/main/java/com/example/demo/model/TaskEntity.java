@@ -5,13 +5,26 @@ import org.springframework.data.cassandra.core.mapping.Table;
 
 import java.util.UUID;
 
-public class Task {
+@Table("tasks")
+public class TaskEntity {
+
+    @PrimaryKey
+    private UUID id;
     private String title;
     private boolean done;
 
-    public Task(String title) {
+    public TaskEntity() {
+        this.id = UUID.randomUUID();
+    }
+
+    public TaskEntity(String title) {
+        this.id = UUID.randomUUID();
         this.title = title;
         this.done = false;
+    }
+
+    public UUID getId() {
+        return id;
     }
 
     public String getTitle() {

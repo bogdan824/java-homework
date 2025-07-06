@@ -5,18 +5,31 @@
     <style>
         body {
             font-family: sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 100px auto;
+            background-color: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
             text-align: center;
-            margin-top: 100px;
         }
 
         form {
             margin-bottom: 30px;
         }
 
-        input {
+        input[type="text"] {
             padding: 10px;
             font-size: 16px;
-            width: 300px;
+            width: 60%;
+            border: 1px solid #ccc;
+            border-radius: 6px;
         }
 
         button {
@@ -40,26 +53,34 @@
 
         li {
             font-size: 18px;
-            margin: 10px 0;
+            margin: 15px 0;
+        }
+
+        input[type="checkbox"] {
+            transform: scale(1.2);
+            margin-right: 10px;
         }
     </style>
 </head>
 <body>
-<h1>Your Tasks</h1>
+<div class="container">
+    <h1>Your Tasks</h1>
 
-<form action="/tasks" method="get" style="margin-bottom: 20px;">
-    <input type="hidden" name="incomplete" value="true" />
-    <button type="submit" style="background-color: orange;">Show Only Incomplete</button>
-</form>
+    <form action="/add-task" method="post">
+        <input type="text" name="title" placeholder="Enter task..." required />
+        <button type="submit">Add Task</button>
+    </form>
 
-<form action="/add-task" method="post">
-    <input type="text" name="title" placeholder="Enter task..." required />
-    <button type="submit">Add Task</button>
-</form>
-
-<h2>Task List</h2>
-<ul>
-    <li th:each="task : ${tasks}" th:text="${task.title}"></li>
-</ul>
+    <h2>Task List</h2>
+    <ul>
+        <li th:each="task : ${tasks}">
+            <form th:action="@{/toggle-task}" method="post" style="display: inline;">
+                <input type="hidden" th:name="id" th:value="${task.id}" />
+                <input type="checkbox" th:checked="${task.done}" onchange="this.form.submit()" />
+                <span th:text="${task.title}" th:style="${task.done} ? 'text-decoration: line-through;' : ''"></span>
+            </form>
+        </li>
+    </ul>
+</div>
 </body>
 </html>

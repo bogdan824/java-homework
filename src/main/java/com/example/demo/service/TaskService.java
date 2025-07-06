@@ -1,30 +1,40 @@
 package com.example.demo.service;
 
-import com.example.demo.model.Task;
+import com.example.demo.model.TaskEntity;
+import com.example.demo.repository.TaskRepository;
 import org.springframework.stereotype.Service;
-import java.util.function.Predicate;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 @Service
 public class TaskService {
 
-    private final List<Task> tasks = new ArrayList<>();
+    private final TaskRepository taskRepository;
+
+    public TaskService(TaskRepository taskRepository) {
+        this.taskRepository = taskRepository;
+    }
 
     public void addTask(String title) {
-        tasks.add(new Task(title));
+        taskRepository.save(new TaskEntity(title));
     }
 
-    public List<Task> getAllTasks() {
-        return tasks;
+    public List<TaskEntity> getAllTasks() {
+        return taskRepository.findAll();
     }
 
-    public List<Task> getIncompleteTasks() {
-        Predicate<Task> notDone = task -> !task.isDone();
-        return tasks.stream()
-                .filter(notDone)
-                .toList(); // Java 16+; use .collect(Collectors.toList()) if on Java 11
+    public List<TaskEntity> getIncompleteTasks() {
+        return taskRepository.findAll()
+                .stream()
+                .filter(task -> !task.isDone())
+                .toList();
     }
 
+    public void toggleDone(UUID id) {
+        taskRepository.findById(id).ifPresent(task -> {
+            task.setDone(!task.isDone());
+            taskRepository.save(task);
+        });
+    }
 }

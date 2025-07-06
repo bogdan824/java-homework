@@ -4,17 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a6f2ec6b-b662-408b-90fb-a10c710553b7" name="Changes" comment="[BAF-0004] Hello Java!">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/model/Task.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/service/TaskService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/tasks.html" afterDir="false" />
+    <list default="true" id="a6f2ec6b-b662-408b-90fb-a10c710553b7" name="Changes" comment="[BAF-0005] Added lists + tasks">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/model/TaskEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/repository/TaskRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.5/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.5/checksums/checksums.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.5/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.5/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.5/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.5/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/HelloController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/model/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/model/Task.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/service/TaskService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/service/TaskService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/tasks.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/tasks.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -196,7 +201,7 @@
       <workItem from="1751668127220" duration="825000" />
       <workItem from="1751669936187" duration="771000" />
       <workItem from="1751820124817" duration="35000" />
-      <workItem from="1751820954125" duration="3247000" />
+      <workItem from="1751820954125" duration="5603000" />
     </task>
     <task id="LOCAL-00001" summary="[BAF-0001] First commit">
       <option name="closed" value="true" />
@@ -294,7 +299,15 @@
       <option name="project" value="LOCAL" />
       <updated>1751822324893</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="[BAF-0005] Added lists + tasks">
+      <option name="closed" value="true" />
+      <created>1751824258735</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1751824258735</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -317,6 +330,7 @@
     <MESSAGE value="[BAF-0003] Add some fixes?" />
     <MESSAGE value="[BAF-0003] Fixes &amp; dependencies" />
     <MESSAGE value="[BAF-0004] Hello Java!" />
-    <option name="LAST_COMMIT_MESSAGE" value="[BAF-0004] Hello Java!" />
+    <MESSAGE value="[BAF-0005] Added lists + tasks" />
+    <option name="LAST_COMMIT_MESSAGE" value="[BAF-0005] Added lists + tasks" />
   </component>
 </project>
